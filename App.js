@@ -1,39 +1,88 @@
 import React from 'react';
-import { Image, Text, TextInput, View} from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View} from 'react-native';
+import macbook from './macbook.jpg';
+import SampleComponent from './components/SampleComponents';
 
-const App = () => {
-  return (
-    <View>
-        <View style={{width: '100%', height: 420, overflow: 'hidden', marginBottom: 20, top: 0}}>
-            <Foto />
-        </View>
-        <Maname />
-      <TextInput style={{margin: 20, borderWidth: 1.5}} />
-      <Foto2 />
+class App extends React.Component{
+  render(){
+    return(
+      <ScrollView>
+        <SampleComponent />
+        <StylingReactNativeComponent />
+      </ScrollView>
+    )
+  }
+}
+
+const StylingReactNativeComponent = () => {
+  return(
+    <View style={{padding: 20, marginTop: 40}}>
+      <Card />
     </View>
-  );
-};
+  )
+}
 
-class Maname extends React.Component{
+class Card extends React.Component{
   render(){
     return(
-      <Text style={{fontWeight: 'bold', margin: 20, fontSize: 24, color: '#0abde3'}}>Medi Rudiantoni</Text>
+      <View style={styles.card}>
+        <Image source={macbook} style={styles.img}></Image>
+        <Text style={styles.title}>New Macbook Pro 2020</Text>
+        <Text style={styles.price}>Rp. 25 jetong</Text>
+        <Text style={styles.loc}>Lampung</Text>
+        <Text style={styles.tombol}>Beli</Text>
+      </View>
     )
   }
 }
 
-const Foto = () => {
-    return(
-        <Image source={{uri: 'https://source.unsplash.com/500x500?mountain'}} style={{width: '100%', height: '100%'}} />
-    )
-}
 
-class Foto2 extends React.Component{
-  render(){
-    return(
-      <Image source={{uri: 'https://source.unsplash.com/500x500?asian'}} style={{width: 100, height: 100, marginHorizontal: 20}}></Image>
-    )
+const styles = StyleSheet.create({
+  card: {
+    width: 212,
+    minHeight: 300,
+    borderRadius: 10,
+    backgroundColor: '#FAF0D7',
+    padding: 12,
+    shadowColor: '#000',
+    shadowOffset: 10,
+    shadowOpacity: 50,
+    shadowRadius: 50
+  },
+  img: {
+    height: 107,
+    width: '100%',
+    borderRadius: 5,
+    marginBottom: 20
+  },
+  title: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 20
+  },
+  price: {
+    color: '#FD8D14',
+    fontSize: 14,
+    fontWeight: '600'
+  },
+  loc: {
+    fontSize: 14
+  },
+  tombol: {
+    width: '100%',
+    padding: 8,
+    color: '#fff',
+    backgroundColor: '#6528F7',
+    borderRadius: 100,
+    fontSize: 18,
+    textAlign: 'center',
+    position: 'absolute',
+    bottom: 12,
+    left: 12
   }
-}
+})
+
+
+
 
 export default App;
