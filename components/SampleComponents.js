@@ -19,7 +19,7 @@ const SampleComponent = () => {
   class Maname extends React.Component{
     render(){
       return(
-        <Text style={{fontWeight: 'bold', margin: 20, fontSize: 24, color: '#0abde3'}}>Medi Rudiantoni app</Text>
+        <Text style={{fontWeight: 'bold', margin: 20, fontSize: 24, color: '#0abde3'}}>Medi Rudiantoni apk</Text>
       )
     }
   }

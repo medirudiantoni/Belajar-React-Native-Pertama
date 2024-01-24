@@ -7,7 +7,7 @@ class App extends React.Component{
   render(){
     return(
       <ScrollView>
-        <SampleComponent />
+        {/* <SampleComponent /> */}
         <StylingReactNativeComponent />
       </ScrollView>
     )
